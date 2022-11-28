@@ -1,0 +1,129 @@
+openapi: 3.0.3
+info:
+  title: S2-Teste-Tecnico-BackEnd
+  version: 1.0.0
+  description: Teste tecnico backend em Django, aplicação possui uma rota para  recebimento
+    de arquivos do tipo txt onde em uma dada formatação de texto são capturados os
+    dados inclusos nela e os mesmos são re-escritos no banco de dados de maneira que
+    possa obter um relatório de determinada loja.
+paths:
+  /api/transacoes/:
+    post:
+      operationId: api_transacoes_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadTransicao'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UploadTransicao'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UploadTransicao'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadTransicao'
+          description: ''
+  /api/transacoes/{nome_loja}/:
+    get:
+      operationId: api_transacoes_retrieve
+      parameters:
+      - in: path
+        name: nome_loja
+        schema:
+          type: string
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransicaoSerialzer'
+          description: ''
+components:
+  schemas:
+    TipoEnum:
+      enum:
+      - Débito
+      - Boleto
+      - Financiamento
+      - Crédito
+      - Recebimento Empréstimo
+      - Vendas
+      - Recebimento TED
+      - Recebimento DOC
+      - Aluguel
+      type: string
+    TransicaoSerialzer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        tipo:
+          $ref: '#/components/schemas/TipoEnum'
+        data:
+          type: string
+          format: date
+        valor:
+          type: number
+          format: double
+        cpf:
+          type: string
+          maxLength: 11
+        cartao:
+          type: string
+          maxLength: 13
+        hora:
+          type: string
+          format: time
+        dono:
+          type: string
+          maxLength: 15
+        loja:
+          type: string
+          maxLength: 20
+      required:
+      - cartao
+      - cpf
+      - data
+      - dono
+      - hora
+      - id
+      - loja
+      - tipo
+      - valor
+    UploadTransicao:
+      type: object
+      properties:
+        file:
+          type: string
+          format: uri
+      required:
+      - file
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
