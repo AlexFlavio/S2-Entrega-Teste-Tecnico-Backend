@@ -12,3 +12,4 @@ class TransicaoSerialzer(serializers.ModelSerializer):
 
 class UploadTransicaoSerializer(serializers.Serializer):
     file = serializers.FileField()
+    ...
