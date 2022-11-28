@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "drf_spectacular",
     "transicao",
 ]
 
@@ -123,3 +124,15 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "S2-Teste-Tecnico-BackEnd",
+    "DESCRIPTION": "Teste tecnico backend em Django, aplicação possui uma rota para  recebimento de arquivos do tipo txt onde em uma dada formatação de texto são capturados os dados inclusos nela e os mesmos são re-escritos no banco de dados de maneira que possa obter um relatório de determinada loja.",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "COMPONENT_SPLIT_REQUEST": True,
+}
