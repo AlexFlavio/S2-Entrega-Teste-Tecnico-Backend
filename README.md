@@ -12,9 +12,9 @@
 ## Passo a Passo para instalação e utilização local da Aplicação:
 
 
- ### 1. Faça o Clone em uma pasta local.
+ ### 1. `Faça o Clone em uma pasta local.`
 
- ### 2. Crie o `ambiente virtual`
+ ### 2. `Crie o ambiente virtual`
 ```
 python -m venv venv
 ```
@@ -27,26 +27,26 @@ source venv/bin/activate
 .\venv\Scripts\activate
 ```
 
- ### 4. Instale as dependências
+ ### 4. `Instale as dependências`
 ```
 pip install -r requirements.txt
 ```
- ### 5. Execute as migrações
+ ### 5. `Execute as migrações`
 ```
 python manage.py migrate
 ```
 
- ### 6. Inicie o servidor local
+ ### 6. `Inicie o servidor local`
  ```
  python manage.py runserver
  ```
 
 
- ### 7. Para Utilização do formulario utilize a rota:
+ ### 7. `Para Utilização do formulario de envio e documentação utilize a rota:`
 ```
 http://localhost:8000/api/docs/
 ```
 
- #### 8. Rota de Post:
+ #### 8. `Rota de Post:`
 ##### `Altere` em `Request Body` a opção `application/json` para `multipart/form-data`
 ##### assim será possivel selicionar o arquivo `diretamente de seu computador!`
