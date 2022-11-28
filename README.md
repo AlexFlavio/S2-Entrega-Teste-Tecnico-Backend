@@ -1,6 +1,7 @@
 # S2-Entrega-Teste-Tecnico-Backend
 
 ## Sobre o propjeto:
+****
 #### Este projéto foi feito em **Python** utilizando o FrameWork **Django**, o mesmo tem o intuito de receber um arquivo.txt com uma formatação especifica e transpilar os dados do arquivo.txt para um banco de dados **Sqlite**, assim os tornando os dados acessiveis em uma busca por nome da loja onde é rotornado todas as trasações feitas por aquela loja e um valor total para todas as transações feitas.
 
 ### Tecnologias utilizadas:
@@ -10,10 +11,10 @@
 
 
 ## Passo a Passo para instalação e utilização local da Aplicação:
-
+****
 
  ### 1. `Faça o Clone em uma pasta local.`
-
+ 
  ### 2. `Crie o ambiente virtual`
 ```
 python -m venv venv
