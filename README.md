@@ -1,7 +1,7 @@
 # S2-Entrega-Teste-Tecnico-Backend
 
 ## Sobre o propjeto:
-#### Este projéto foi feito em **Django**, o mesmo tem o intuito de receber um arquiv.txt em uma formatação especifica e transpilar os dados do arquivo para um banco de dados **Sqlite**, assim os tornando acessiveis em uma busca por nome da loja onde é rotornado todas as trasações feitas por aquela loja e um valor total para todas as transações feitas.
+#### Este projéto foi feito em **Python** utilizando o FrameWork **Django**, o mesmo tem o intuito de receber um arquivo.txt com uma formatação especifica e transpilar os dados do arquivo.txt para um banco de dados **Sqlite**, assim os tornando os dados acessiveis em uma busca por nome da loja onde é rotornado todas as trasações feitas por aquela loja e um valor total para todas as transações feitas.
 
 ### Tecnologias utilizadas:
 * #### Python | Linguaguem
